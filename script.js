@@ -35,10 +35,16 @@ const restaurant = {
     starterIndex = 1,
     mainIndex = 0,
     time = '20:00',
-    address
+    address,
   }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
     );
   },
 };
@@ -123,3 +129,53 @@ console.log(o, c);
 // // Default Values
 // const [p = 1, q = 1, r = 1] = [8, 9];
 // console.log(p, q, r);
+
+// The Spread Operator
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy Array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Joint 2 Arrays or more
+const menu1 = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu1);
+
+// Iterables : arrays, strings, maps, sets. Not objects
+
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+console.log(...str);
+// console.log(`${...str} Schmedtmann`);  ===>  //Not Working in Template literals because this is not the place that expects multiple values seperated by a comma(,).
+
+//Real World Example
+
+const ingredients = [
+  // prompt("Let's make pasta! Ingredient 1?"),
+  // prompt('Ingredient 2?'),
+  // prompt('Ingredient 3?'),
+];
+console.log(ingredients);
+
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(...ingredients);
+
+// Objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe'};
+console.log(newRestaurant);
+
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
