@@ -220,3 +220,56 @@ add(...xyz);
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
+
+
+//-----SHORT CIRCUITING && and------------
+
+
+// Porperties of LOGICAL OPERATORS
+// - Use any data type
+// - Return any data type
+// - Do Short-Circuiting or Short-Circuit Evaluation
+
+
+
+console.log('--- OR operator---');
+//----OR OPERATOR
+console.log(3 || 'Jonas');
+console.log('Jonas' || 3);
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(0 || true);
+console.log(undefined || 0);
+console.log(undefined || undefined);
+console.log(0 || 0);
+console.log('' || '');
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+
+
+restaurant.numGuests = 23;
+
+// Ternary Operators
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+// Short Circuit
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+
+console.log('--- AND Operator---');
+
+console.log(0 && 'Jonas');
+console.log('Jonas' && 0);
+console.log(7 && 'Jonas');
+console.log(undefined && 0 && '' && 'Hello' && 23 && null);
+
+
+// Practical Example
+if(restaurant.orderPizza){
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach')
