@@ -221,16 +221,12 @@ add(...xyz);
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
 
-
 //-----SHORT CIRCUITING && and------------
-
 
 // Porperties of LOGICAL OPERATORS
 // - Use any data type
 // - Return any data type
 // - Do Short-Circuiting or Short-Circuit Evaluation
-
-
 
 console.log('--- OR operator---');
 //----OR OPERATOR
@@ -246,8 +242,6 @@ console.log(0 || 0);
 console.log('' || '');
 console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
-
-
 restaurant.numGuests = 23;
 
 // Ternary Operators
@@ -258,7 +252,6 @@ console.log(guests1);
 const guest2 = restaurant.numGuests || 10;
 console.log(guest2);
 
-
 console.log('--- AND Operator---');
 
 console.log(0 && 'Jonas');
@@ -266,10 +259,19 @@ console.log('Jonas' && 0);
 console.log(7 && 'Jonas');
 console.log(undefined && 0 && '' && 'Hello' && 23 && null);
 
-
 // Practical Example
-if(restaurant.orderPizza){
+if (restaurant.orderPizza) {
   restaurant.orderPizza('mushrooms', 'spinach');
 }
 
-restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach')
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
+
+// The Nullish Coalescing Operator
+restaurant.numGuestss = 0;
+const guests = restaurant.numGuestss || 10;
+console.log(guests);
+
+
+// Nulish Values : Null and Undefined (Not 0 or '')
+const guestCorrect = restaurant.numGuestss ?? 10;
+console.log(guestCorrect);
