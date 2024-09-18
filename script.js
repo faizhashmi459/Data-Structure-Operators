@@ -307,7 +307,6 @@ rest2.owner &&= '<ANONYMOUS>';
 console.log(rest1);
 console.log(rest2);
 
-
 /*
 // Coding Challenge 01
 
@@ -337,7 +336,6 @@ operator.
 Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
 Then, call the function again with players from game.scored
 */
-
 
 const game = {
   team1: 'Bayern Munich',
@@ -397,11 +395,13 @@ const players1Final = [...players1, 'Thiago', 'Coutinho', 'Periscic'];
 console.log(players1Final);
 
 // 5-
-const {odds:{team1, x: draw, team2}} = game;
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
 console.log(team1, draw, team2);
 
 // 6-
-const printGoals = function(...players){
+const printGoals = function (...players) {
   console.log(players);
   console.log(`${players.length} goals were scored`);
 };
@@ -412,3 +412,17 @@ printGoals(...game.scored);
 // 7-
 team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
+
+// Looping Arrays The FOR OR Loop
+const myMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const items of myMenu) console.log(items);
+// for (const player of players1Final) console.log(player);
+
+// for (const items of myMenu.entries()){
+//   console.log(items);
+// }
+
+for (const [i, el] of myMenu.entries()) {
+  console.log(`${i + 1}:${el}`);
+}
