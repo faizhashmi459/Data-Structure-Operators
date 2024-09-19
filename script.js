@@ -423,6 +423,15 @@ for (const items of myMenu) console.log(items);
 //   console.log(items);
 // }
 
+
+
+// OLD Method
+// for (const item of myMenu.entries()) {
+//   console.log(`${item[0] + 1}:${item[1]}`);
+// }
+
+
+// NEW Method (Destructuring)
 for (const [i, el] of myMenu.entries()) {
   console.log(`${i + 1}:${el}`);
 }
