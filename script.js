@@ -423,15 +423,32 @@ for (const items of myMenu) console.log(items);
 //   console.log(items);
 // }
 
-
-
 // OLD Method
 // for (const item of myMenu.entries()) {
 //   console.log(`${item[0] + 1}:${item[1]}`);
 // }
 
-
 // NEW Method (Destructuring)
 for (const [i, el] of myMenu.entries()) {
   console.log(`${i + 1}:${el}`);
 }
+
+// ------------OPTIONAL CHAINING-----------
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'close';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// OPTIONAL CHAINING on ARRAYS
+const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
+console.log(users[0]?.name ?? 'User array empty');
+
+if (users.length > 0) console.log(users[0].name);
+else console.log('User array empty');
